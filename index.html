@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Heaven | Luxury Confections</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+</head>
+<body>
+
+<!-- ========NAVBAR===== -->
+     <canvas id="glitterCanvas"></canvas>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">SWEET <span>HEAVEN</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+               
+            </button>
+           
+            <div class="premium-search-container">
+    <i class="bi bi-search search-glass-icon"></i>
+    <input type="text" class="premium-search-input" placeholder="Search Sweet Heaven...">
+</div>
+           
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gifthamper.html">Gift Hampers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            <div class="premium-cart-wrapper">
+    <i class="bi bi-bag-heart premium-cart-icon"></i>
+    <span class="cart-count-badge" id="cartBadge">0</span>
+    
+</div>
+            </div>
+        </div>
+    </nav>
+
+    
+<!-- ======caraousel ==== -->
+    <div id="hero" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#hero" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#hero" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#hero" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#hero" data-bs-slide-to="3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="background-image: url('./images.png/carauselimg1.png');">
+                <div class="carousel-overlay"></div>
+                <div class="carousel-caption">
+                    <h1>Royal Sweets</h1>
+                    <p class="fs-5">Traditional delicacies made with pure ingredients and golden love.</p>
+                    <a href="#products" class="btn btn-premium">Taste the Tradition</a>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('./images.png/carausel2.png');">
+                <div class="carousel-overlay"></div>
+                <div class="carousel-caption">
+                    <h1>Dark & Silk</h1>
+                    <p class="fs-5">Hand-tempered chocolates that melt into pure bliss.</p>
+                    <a href="#products" class="btn btn-premium">Explore Cocoa</a>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('./images.png/carausel3.png');">
+                <div class="carousel-overlay"></div>
+                <div class="carousel-caption">
+                    <h1>Signature Cakes</h1>
+                    <p class="fs-5">Designing your dream celebrations, one layer at a time.</p>
+                    <a href="#products" class="btn btn-premium">Order Custom Cake</a>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('./images.png/carausel4.png');">
+                <div class="carousel-overlay"></div>
+                <div class="carousel-caption">
+                    <h1>Heavenly Brews</h1>
+                    <p class="fs-5">The finest roasted beans for the ultimate coffee experience.</p>
+                    <a href="#products" class="btn btn-premium">See Beverage Menu</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- catagery -->
+ <div id="main-home-content">
+    <div class="container py-5 text-center">
+        <h2 class="font-playfair mb-5">Our Boutique Collections</h2>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="category-card" onclick="openShop('sweets-list', 'Handcrafted Sweets')">
+                    <img src="./images.png/platter sweet.png" class="w-100 rounded">
+                    <h3 class="mt-3">Sweets</h3>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="category-card" onclick="openShop('chocolates-list', 'Fine Chocolates')">
+                    <img src="./images.png/overviewchocl.png" class="w-100 rounded">
+                    <h3 class="mt-3">Chocolates</h3>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="category-card" onclick="openShop('cakes-list', 'Artisan Cakes')">
+                    <img src="./images.png/cakessfront.png" class="w-100 rounded">
+                    <h3 class="mt-3">Cakes</h3>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="category-card" onclick="openShop('beverages-list', 'Premium Beverages')">
+                    <img src="./images.png/beverages.png" class="w-100 rounded">
+                    <h3 class="mt-3">Beverages</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="shop-view-area" style="display: none; min-height: 80vh;">
+    <div class="container py-5">
+        <div class="d-flex justify-content-between align-items-center mb-5 border-bottom pb-3">
+            <h2 id="current-cat-title" class="font-playfair">Category Name</h2>
+            <button class="btn btn-dark" onclick="closeShop()">← Back to Home</button>
+        </div>
+
+        <div id="sweets-list" class="product-group row g-4" style="display:none;">
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/gulab.png"><h5>Gulab Jamun</h5><p class="text-gold">$12</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/rasgula.png"><h5>Rasgula</h5><p class="text-gold">$10</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/jalebi.png"><h5>Jalebi</h5><p class="text-gold">$8</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/donut.png"><h5>Donuts</h5><p class="text-gold">$15</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/halwa.png"><h5>gajar ka halwa</h5><p class="text-gold">$14</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/macroon.png"><h5>Macarons</h5><p class="text-gold">$22</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/barfi.png"><h5>Pista Barfi</h5><p class="text-gold">$18</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/ladoo.png"><h5>Ladoo</h5><p class="text-gold">$10</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+        </div>
+
+        <div id="chocolates-list" class="product-group row g-4" style="display:none;">
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/dark.png"><h5>Dark Truffle</h5><p class="text-gold">$24</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/milkbar.png"><h5>Milk Bar</h5><p class="text-gold">$10</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/hazelnutchoc.png"><h5>Hazelnut</h5><p class="text-gold">$18</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/seasalt.png"><h5>Caramel</h5><p class="text-gold">$15</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/white.png"><h5>White Silk</h5><p class="text-gold">$20</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/choco.png"><h5>choco choc</h5><p class="text-gold">$14</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/kunafa.png"><h5>kunafa choclate</h5><p class="text-gold">$24</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/belgium.png"><h5>Belgium</h5><p class="text-gold">$24</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+
+        </div>
+
+        <div id="cakes-list" class="product-group row g-4" style="display:none;">
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/redvelvet.png"><h5>Red velvet</h5><p class="text-gold">$45</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/choc.png"><h5>choclate Cake</h5><p class="text-gold">$40</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/vanila.png"><h5>Vanilla Bean</h5><p class="text-gold">$35</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/strawberry.png"><h5>Strawberry cake</h5><p class="text-gold">$38</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/fudge.png"><h5>fudge cake</h5><p class="text-gold">$25</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/blueberry.png"><h5>blueberry cake</h5><p class="text-gold">$50</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/carrot.png"><h5>Carrot Cake</h5><p class="text-gold">$32</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/cheesecake.png"><h5>Cheesecake</h5><p class="text-gold">$42</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+        </div>
+
+        <div id="beverages-list" class="product-group row g-4" style="display:none;">
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/cappuciono.png"><h5>cappuccino</h5><p class="text-gold">$6</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/latte.png"><h5> caramel latte</h5><p class="text-gold">$5</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/hotchoc.png"><h5>hot choclate</h5><p class="text-gold">$4</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/strawmatcha.png"><h5>strawberry matcha</h5><p class="text-gold">$7</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/americano.png"><h5>americano</h5><p class="text-gold">$5</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/hazlatte.png"><h5>hazelnut latte</h5><p class="text-gold">$8</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/lotus.png"><h5>lottus milkshake</h5><p class="text-gold">$6</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+            <div class="col-md-3"><div class="p-card"><img src="./images.png/chai.png"><h5>karak tea</h5><p class="text-gold">$8</p><button class="btn-bag" onclick="addToCart()">Add to Bag</button></div></div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- about  -->
+
+<section id="about" class="container my-5 py-5">
+    <div class="row align-items-center">
+        <div class="col-md-6 mb-4">
+            <div class="about-img-wrapper">
+                <img src="./images.png/front about url.png" class="img-fluid rounded-4 shadow-lg" alt="Our Story">
+                <div class="experience-badge">Est. 2026</div>
+            </div>
+        </div>
+        <div class="col-md-6 ps-md-5">
+            <h6 class="text-uppercase fw-bold text-gold mb-3" style="color: #d4af37; letter-spacing: 2px;">Our Story</h6>
+            <h2 class="display-5 fw-bold mb-4" style="font-family: 'Playfair Display';">A Slice of Heaven in Every Bite</h2>
+            <p class="text-muted leading-relaxed">At Sweet Heaven, we believe that dessert is not just food; it’s an emotion. Started as a small family boutique, we have spent decades perfecting the art of traditional sweets and modern patisserie.</p>
+            <p class="text-muted">Every ingredient is sourced globally—from Belgian cocoa to the finest local organic dairy—ensuring that your celebrations are nothing short of royal.</p>
+            <button class="btn btn-outline-dark px-4 py-2 mt-3">Learn More</button>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES======== -->
+ <section id="services" class="py-5" style="background: rgba(212, 175, 55, 0.05);">
+    <div class="container text-center py-5">
+        <h2 class="display-6 fw-bold mb-5" style="font-family: 'Playfair Display';">Luxury Services</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="service-card p-4 bg-white shadow-sm rounded-3">
+                    <i class="bi bi-truck fs-1 text-gold" style="color: #d4af37;"></i>
+                    <h4 class="mt-3">Express Delivery</h4>
+                    <p class="text-muted">Temperature-controlled delivery to keep your treats fresh.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card p-4 bg-white shadow-sm rounded-3">
+                    <i class="bi bi-palette fs-1 text-gold" style="color: #d4af37;"></i>
+                    <h4 class="mt-3">Custom Design</h4>
+                    <p class="text-muted">Work with our chefs to create the cake of your dreams.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card p-4 bg-white shadow-sm rounded-3">
+                    <i class="bi bi-gem fs-1 text-gold" style="color: #d4af37;"></i>
+                    <h4 class="mt-3">Corporate Gifting</h4>
+                    <p class="text-muted">Premium bulk hampers for your business partners.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GIFT HAMPERS== -->
+ <section id="hampers" class="py-5" style="background-color: #fff; overflow: hidden;">
+    <div class="container py-5">
+        
+        <div class="row justify-content-center mb-5 pb-lg-4">
+            <div class="col-md-6 text-center">
+                <span class="text-gold small fw-bold text-uppercase" style="letter-spacing: 5px; color: #d4af37;">Collection 2K26</span>
+                <h2 class="display-4 mt-2" style="font-family: 'Playfair Display', serif; font-weight: 400;">Gift & Celebrate</h2>
+                <p class="text-muted mt-3 px-lg-5">Hand-curated treasures for life's most golden moments.</p>
+            </div>
+        </div>
+
+        <div class="row g-5 align-items-center">
+            
+            <div class="col-lg-5">
+                <div class="arch-container main-arch">
+                    <img src="./images.png/gifthamper1.png" class="img-fluid" alt="Luxe Hamper">
+                    <div class="arch-info p-4">
+                        <h4 class="font-playfair">The Imperial Tray</h4>
+                        <p class="small text-gold mb-0">$185.00</p>
+                        <button class="btn-minimal" onclick="addToCart()">+ Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="row g-4">
+                    <div class="col-md-6 pt-lg-5">
+                        <div class="arch-container small-arch shadow-sm">
+                            <img src="images.png/gift hamper 2.png" class="img-fluid" alt="Velvet Box">
+                            <div class="arch-info p-3">
+                                <h5 class="font-playfair">Velvet Keepsake</h5>
+                                <p class="small text-gold mb-0">$190.00</p>
+                                <button class="btn-minimal" onclick="addToCart()">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="arch-container small-arch shadow-sm mt-lg-n5">
+                            <img src="./images.png/gifthamper3.png" class="img-fluid" alt="Floral Sweet">
+                            <div class="arch-info p-3">
+                                <h5 class="font-playfair">Floral Infusion</h5>
+                                <p class="small text-gold mb-0">$170.00</p>
+                                <button class="btn-minimal" onclick="addToCart()">+ Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <div class="col-12 ps-lg-5">
+                        <div class="border-start border-gold ps-4 py-2">
+                            <h5 class="font-playfair italic mb-3">Customized for 2K26</h5>
+                            <p class="text-muted small">Every hamper includes a personalized calligraphy card and our signature gold-thread ribbon.</p>
+                            <a href="#" class="text-dark small fw-bold text-decoration-none border-bottom">VIEW FULL CATALOG →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- 
+ customise hamper==  -->
+<div class="sweet-heaven-container">
+    <h1 class="brand-title">CUSTOMISE HAMPERS</h1>
+    <p class="brand-subtitle">Please select exactly 4 items for your collection.</p>
+
+    <div class="hamper-box">
+        <div id="counter" class="item-counter">0 / 4 Items Selected</div>
+        <div class="slot-container" id="box-interior">
+            <span id="placeholder" class="placeholder-text">Empty Box</span>
+        </div>
+        
+        <div class="button-group">
+            <button class="btn btn-reset" onclick="resetSelection()">Reset Selection</button>
+            <button class="btn btn-complete" id="completeBtn" onclick="finishSelection()">Complete Selection</button>
+        </div>
+    </div>
+
+    <div class="selection-grid">
+        <div class="product-card" onclick="addItem(this, '🍫')">
+            <img src="./images.png/dark.png" alt="Dark Chocolate">
+            <div class="card-info">Dark Chocolate <span class="plus-icon">+</span></div>
+        </div>
+        <div class="product-card" onclick="addItem(this, '🍰')">
+            <img src="./images.png/redvelvet.png" alt="Red Velvet">
+            <div class="card-info">Red Velvet <span class="plus-icon">+</span></div>
+        </div>
+        <div class="product-card" onclick="addItem(this, '☕')">
+            <img src="./images.png/latte.png" alt="Latte">
+            <div class="card-info">Latte <span class="plus-icon">+</span></div>
+        </div>
+        <div class="product-card" onclick="addItem(this, '🍯')">
+            <img src="./images.png/gulab.png" alt="Gulab Jamun">
+            <div class="card-info">Gulab Jamun <span class="plus-icon">+</span></div>
+        </div>
+        <div class="product-card" onclick="addItem(this, '🍫')">
+            <img src="./images.png/kunafa.png" alt="Kunafa Choc">
+            <div class="card-info">Kunafa Choc <span class="plus-icon">+</span></div>
+        </div>
+        <div class="product-card" onclick="addItem(this, '🍬')">
+            <img src="./images.png/barfi.png" alt="Barfi">
+            <div class="card-info">Barfi <span class="plus-icon">+</span></div>
+        </div>
+        <div class="product-card" onclick="addItem(this, '☕')">
+            <img src="./images.png/hotchoc.png" alt="Hot Chocolate">
+            <div class="card-info">Hot Chocolate <span class="plus-icon">+</span></div>
+        </div>
+        <div class="product-card" onclick="addItem(this, '🌋')">
+            <img src="./images.png/lava.png" alt="Lava Cake">
+            <div class="card-info">Lava Cake <span class="plus-icon">+</span></div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- contact page=== -->
+<div id="contact-page" class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center mb-5">
+            <h2 class="font-playfair display-4">Get in Touch</h2>
+            <p class="text-muted">Have a special request or a question about our collections? We’d love to hear from you.</p>
+        </div>
+    </div>
+
+    <div class="row g-5">
+        <div class="col-md-4">
+            <div class="contact-info-card p-4 rounded shadow-sm">
+                <h4 class="font-playfair">Visit Our Boutique</h4>
+                <p>123 Confectionery Lane<br>Pastry District, NY 10001</p>
+                
+                <h4 class="font-playfair mt-4">Inquiries</h4>
+                <p>hello@sweetheaven.com<br>+1 (555) 000-1234</p>
+                
+                <div class="social-links mt-4">
+                    <a href="#" class="me-3 text-dark"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="me-3 text-dark"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <form id="contact-form" class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-control premium-input" placeholder="Enter your name">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-control premium-input" placeholder="email@example.com">
+                </div>
+                <div class="col-12">
+                    <label class="form-label">Subject</label>
+                    <select class="form-select premium-input">
+                        <option selected>General Inquiry</option>
+                        <option>Order Status</option>
+                        <option>Custom Cake Request</option>
+                        <option>Feedback</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-control premium-input" rows="5" placeholder="How can we help you?"></textarea>
+                </div>
+                <div class="col-12 text-end">
+                    <button type="submit" class="btn btn-dark px-5 py-2 btn-premium">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- FOOTER -->
+
+<footer class="footer-premium">
+    <div class="container">
+        <div class="row gy-5">
+            <div class="col-lg-4 col-md-6">
+                <h3 class="font-playfair text-gold mb-4">Sweet Heaven</h3>
+                <p class="footer-text">Crafting moments of pure indulgence since 2024. Our artisanal hampers are designed for those who appreciate the finer things in life.</p>
+                <div class="social-links mt-4">
+                    <a href="https://www.instagram.com/?hl=en"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.pinterest.com/"><i class="bi bi-pinterest"></i></a>
+                    <a href="https://www.whatsapp.com/"><i class="bi bi-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6">
+                <h6 class="text-uppercase tracking-widest mb-4">Collections</h6>
+                <ul class="footer-links">
+                    <li><a href="#hampers">Royal Heritage</a></li>
+                    <li><a href="#hampers">Velvet Nights</a></li>
+                    <li><a href="#hampers">Gold Edition</a></li>
+                    <li><a href="#">Limited Release</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-md-6">
+                <h6 class="text-uppercase tracking-widest mb-4">Concierge</h6>
+                <ul class="footer-links">
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Return Suite</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <h6 class="text-uppercase tracking-widest mb-4">The Inner Circle</h6>
+                <p class="small text-muted mb-4">Join our mailing list for exclusive previews of new collections.</p>
+                <div class="newsletter-form">
+                            <form id="emailForm">
+  <input type="email" id="userEmail" placeholder="Enter your email" required>
+  <button type="button" onclick="resetEmail()">Join</button>
+</form>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom mt-5 pt-4 border-top border-secondary">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <p class="small mb-0">&copy; 2026 Sweet Heaven Boutique. All Rights Reserved.</p>
+                <p class="small mb-0 text-uppercase tracking-widest">Designed for Excellence</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+       <!-- javascripr -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const canvas = document.getElementById('glitterCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particles = [];
+
+        class Particle {
+            constructor() {
+                this.init();
+            }
+            init() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 1;
+                this.speedX = (Math.random() - 0.5) * 0.8;
+                this.speedY = (Math.random() - 0.5) * 0.8;
+                this.color = Math.random() > 0.5 ? '#d4af37' : '#ffffff';
+                this.opacity = Math.random();
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+                if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = this.opacity;
+                ctx.fill();
+            }
+        }
+
+        function setup() {
+            particles = [];
+            for (let i = 0; i < 70; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        setup();
+        animate();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            setup();
+        });
+        
+//    ADD TO CART
+    let currentCartCount = 0;
+
+    function addToCart() {
+        // Increase the count
+        currentCartCount++;
+        
+        // Update the badge in the header
+        const badge = document.getElementById('cartBadge');
+        badge.innerText = currentCartCount;
+        
+        // Premium touch: brief animation on the badge
+        badge.style.transform = "scale(1.5)";
+        setTimeout(() => {
+            badge.style.transform = "scale(1)";
+        }, 200);
+    }
+
+// CATEGORY
+
+function openShop(listId, title) {
+    // 1. Hide the Home/Hero content
+    const homeSection = document.getElementById('main-home-content');
+    if (homeSection) homeSection.style.display = 'none';
+
+    // 2. Show the Shop area
+    const shopSection = document.getElementById('shop-view-area');
+    if (shopSection) shopSection.style.display = 'block';
+
+    // 3. Set the Title dynamically
+    document.getElementById('current-cat-title').innerText = title;
+
+    // 4. Hide all product lists first, then show the one clicked
+    const allLists = document.querySelectorAll('.product-group');
+    allLists.forEach(list => list.style.display = 'none');
+
+    const selectedList = document.getElementById(listId);
+    if (selectedList) selectedList.style.display = 'flex';
+
+    // 5. Scroll to top so it looks like a new page
+    window.scrollTo(0, 0);
+}
+
+function closeShop() {
+    // Reveal Home, hide Shop
+    document.getElementById('main-home-content').style.display = 'block';
+    document.getElementById('shop-view-area').style.display = 'none';
+}
+
+// contact page===
+function showContact() {
+    document.getElementById('main-home-content').style.display = 'none';
+    document.getElementById('product-display-area').style.display = 'none';
+    // Only show the contact page
+    document.getElementById('contact-page').style.display = 'block';
+}
+
+
+/* custoise hamper== */
+ 
+        let selectedItemCount = 0;
+const selectionLimit = 4;
+
+function addItem(cardElement, itemEmoji) {
+    if (selectedItemCount < selectionLimit) {
+        selectedItemCount++;
+        
+        // Hide "Empty Box" text
+        document.getElementById('placeholder').style.display = 'none';
+        
+        // Visual feedback on card
+        cardElement.classList.add('disabled');
+        
+        // Update Counter
+        document.getElementById('counter').innerText = `${selectedItemCount} / 4 Items Selected`;
+        
+        // Create the small icon inside the mocha box
+        const dot = document.createElement('div');
+        dot.className = 'item-dot';
+        dot.innerText = itemEmoji;
+        document.getElementById('box-interior').appendChild(dot);
+
+        // Turn on "Complete Selection" button when 4 are picked
+        if (selectedItemCount === selectionLimit) {
+            document.getElementById('completeBtn').classList.add('active');
+        }
+    }
+}
+
+function resetSelection() {
+    selectedItemCount = 0;
+    // Clear the box and reset text
+    document.getElementById('box-interior').innerHTML = '<span id="placeholder" class="placeholder-text">Empty Box</span>';
+    document.getElementById('counter').innerText = "0 / 4 Items Selected";
+    document.getElementById('completeBtn').classList.remove('active');
+    
+    // Make all cards clickable again
+    const allCards = document.querySelectorAll('.product-card');
+    allCards.forEach(card => card.classList.remove('disabled'));
+}
+
+function finishSelection() {
+    alert("Sweet! Your custom hamper has been added to the cart.");
+}
+
+
+
+// transitions in writting of landing page===
+document.addEventListener("DOMContentLoaded", () => {
+    const observerOptions = {
+        threshold: 0.1 // Triggers when 10% of the card is visible
+    };
+
+    const revealOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("reveal");
+                // Stop observing once the animation is done
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Apply the observer to every product card
+    const cards = document.querySelectorAll(".product-card");
+    cards.forEach(card => {
+        revealOnScroll.observe(card);
+    });
+});
+
+// Add this inside your forEach loop if you want a "wave" effect
+cards.forEach((card, index) => {
+    card.style.transitionDelay = `${(index % 4) * 0.1}s`; 
+    revealOnScroll.observe(card);
+});
+
+
+
+function resetEmail() {
+  const emailInput = document.getElementById('userEmail');
+  
+  // Logic to 'add' the email would go here (e.g., API call)
+  console.log("Email added: " + emailInput.value);
+
+  // This clears the field
+  emailInput.value = '';
+}
+
+
+
+
+
+    </script>
+
+                      
+
+
+</body>
+</html>

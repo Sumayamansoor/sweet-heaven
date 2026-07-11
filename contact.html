@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Sweet Heaven Boutique</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+        :root {
+            --gold: #d4af37;
+            --dark-berry: #2d1a24;
+            --cream: #fffaf0;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cream);
+            margin: 0;
+            overflow-x: hidden;
+            color: var(--dark-berry);
+        }
+
+           /* --- 1. GLITTER CANVAS --- */
+        #glitterCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: radial-gradient(circle, #fffaf0 0%, #f7e9d7 100%);
+        }
+
+        /* --- 2. NAVBAR --- */
+        .navbar {
+            background: rgba(255, 255, 255, 0.85) !important;
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .navbar-brand span { color: var(--gold); }
+
+        .nav-link {
+            font-weight: 600;
+            color: var(--dark-berry) !important;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover { color: var(--gold) !important; }
+        
+        
+
+
+
+
+
+        /* 1. Define the Shaky Keyframes */
+@keyframes shakeMenu {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(2deg) translateX(1px); }
+    50% { transform: rotate(-2deg) translateX(-1px); }
+    75% { transform: rotate(1.5deg) translateX(1px); }
+    100% { transform: rotate(0deg); }
+}
+
+/* 2. Apply to your Navbar Items */
+.navbar-item, .nav-link { 
+    display: inline-block; /* Required for transform to work */
+    animation: shakeMenu 0.4s ease-in-out infinite; /* Constant shaking */
+    transform-origin: center;
+}
+
+/* 3. Optional: Staggered Shaking (Makes them dance at different times) */
+.navbar-item:nth-child(even) {
+    animation-duration: 0.5s; /* Slightly slower */
+    animation-delay: 0.1s;
+}
+
+.navbar-item:nth-child(odd) {
+    animation-duration: 0.3s; /* Slightly faster */
+    animation-direction: reverse;
+}
+ 
+.contact-area {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 900px;
+        margin: 50px auto;
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        font-family: sans-serif;
+    }
+
+    /* Picture Styling */
+    .contact-pic {
+        flex: 1;
+        min-width: 300px;
+    }
+    .contact-pic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Form Styling */
+    .contact-form {
+        flex: 1;
+        min-width: 300px;
+        padding: 40px;
+        background: #f5ece5; /* Rose-Beige */
+        color: #3d2b1f; /* Espresso */
+    }
+
+    .contact-form h2 { margin-top: 0; }
+
+    input, textarea {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #d3c7be;
+        border-radius: 5px;
+        box-sizing: border-box; /* Keeps everything aligned */
+    }
+
+    /* Simple Animation on Button */
+    button {
+        width: 100%;
+        padding: 15px;
+        background: #3d2b1f;
+        color: #f5ece5;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #5a4030;
+        transform: scale(1.02);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 600px) {
+        .contact-area { flex-direction: column; margin: 20px; }
+    }
+
+
+    /* 1. The Entrance: A quick, bouncy pop-in */
+@keyframes bounceIn {
+    0% { opacity: 0; transform: scale(0.3); }
+    50% { opacity: 0.9; transform: scale(1.05); }
+    70% { transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.contact-area {
+    animation: bounceIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 2. The "Dancing" Image: A gentle side-to-side sway */
+@keyframes sway {
+    0%, 100% { transform: rotate(-1deg) scale(1); }
+    50% { transform: rotate(1deg) scale(1.05); }
+}
+
+.contact-pic img {
+    animation: sway 4s ease-in-out infinite; /* Always dancing */
+}
+
+/* 3. The Floating Form: Making the inputs drift slightly up and down */
+@keyframes drift {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.contact-form h2 {
+    animation: drift 3s ease-in-out infinite;
+}
+
+input, textarea {
+    animation: drift 4s ease-in-out infinite;
+}
+
+/* 4. The "Pulse" Button: It beats like a heart to grab attention */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    10% { transform: scale(1.05); }
+    20% { transform: scale(1); }
+    30% { transform: scale(1.05); }
+    40% { transform: scale(1); }
+}
+
+button {
+    animation: heartbeat 5s ease-in-out infinite; /* Pulses every few seconds */
+    background: #3d2b1f;
+    box-shadow: 0 4px 15px rgba(61, 43, 31, 0.2);
+}
+        
+
+        .footer-premium {
+    background: #0f0f0f; /* Deep charcoal/black */
+    color: #ffffff;
+    padding: 100px 0 40px;
+    margin-top: 80px;
+}
+
+.text-gold { color: #d4af37; }
+
+.footer-text {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: #999;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: #999;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #d4af37;
+    padding-left: 10px;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-right: 20px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #d4af37;
+}
+    /* Mobile styles go here first */
+
+/* Tablet and up (768px+) */
+@media (min-width: 768px) {
+  .container { display: flex; }
+}
+
+/* Desktop and up (1024px+) */
+@media (min-width: 1024px) {
+  .sidebar { display: block; }
+}
+.parent-container {
+  container-type: inline-size;
+}
+
+@container (min-width: 400px) {
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Switch to side-by-side layout */
+  }
+}    
+        </style>
+</head>
+<body>
+      <canvas id="glitterCanvas"></canvas>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">SWEET <span>HEAVEN</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           
+            <div class="premium-search-container">
+    <i class="bi bi-search search-glass-icon"></i>
+    <input type="text" class="premium-search-input" placeholder="Search Sweet Heaven...">
+</div>
+           
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gifthamper.html">Gift Hampers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            <div class="premium-cart-wrapper">
+    <i class="bi bi-bag-heart premium-cart-icon"></i>
+    <span class="cart-count-badge" id="cartBadge">0</span>
+</div>
+            </div>
+        </div>
+    </nav>
+    
+<section class="contact-area">
+    <div class="contact-pic">
+        <img src="./images.png/services2.png" alt="Sweet Heaven Treats">
+    </div>
+
+    <div class="contact-form">
+        <h2>Contact Us</h2>
+        <p>Let's make your day a little sweeter.</p>
+        
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="4" placeholder="How can we help?" required></textarea>
+            <button type="submit">SEND MESSAGE</button>
+        </form>
+    </div>
+</section>
+
+<div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=city%20tower%20and%20shopping%20mall%20johar%20karachi+(sweet%20heaven%20bake%20shop)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.mapsdirections.info/pl/mapa-populacji/">oblicz populację w wybranym regionie</a></iframe></div>
+
+
+    <footer class="footer-premium">
+    <div class="container">
+        <div class="row gy-5">
+            <div class="col-lg-4 col-md-6">
+                <h3 class="font-playfair text-gold mb-4">Sweet Heaven</h3>
+                <p class="footer-text">Crafting moments of pure indulgence since 2024. Our artisanal hampers are designed for those who appreciate the finer things in life.</p>
+                <div class="social-links mt-4">
+                   <a href="https://www.instagram.com/?hl=en"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.pinterest.com/"><i class="bi bi-pinterest"></i></a>
+                    <a href="https://www.whatsapp.com/"><i class="bi bi-whatsapp"></i></a>
+            </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6">
+                <h6 class="text-uppercase tracking-widest mb-4">Collections</h6>
+                <ul class="footer-links">
+                    <li><a href="#hampers">Royal Heritage</a></li>
+                    <li><a href="#hampers">Velvet Nights</a></li>
+                    <li><a href="#hampers">Gold Edition</a></li>
+                    <li><a href="#">Limited Release</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-md-6">
+                <h6 class="text-uppercase tracking-widest mb-4">Concierge</h6>
+                <ul class="footer-links">
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Return Suite</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <h6 class="text-uppercase tracking-widest mb-4">The Inner Circle</h6>
+                <p class="small text-muted mb-4">Join our mailing list for exclusive previews of new collections.</p>
+                <div class="newsletter-form">
+                           <form id="emailForm">
+  <input type="email" id="userEmail" placeholder="Enter your email" required>
+  <button type="button" onclick="resetEmail()">Join</button>
+</form>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom mt-5 pt-4 border-top border-secondary">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <p class="small mb-0">&copy; 2026 Sweet Heaven Boutique. All Rights Reserved.</p>
+                <p class="small mb-0 text-uppercase tracking-widest">Designed for Excellence</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const canvas = document.getElementById('glitterCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+         
+
+    ///add to cart
+    let currentCartCount = 0;
+
+    function addToCart() {
+        // Increase the count
+        currentCartCount++;
+        
+        // Update the badge in the header
+        const badge = document.getElementById('cartBadge');
+        badge.innerText = currentCartCount;
+        
+        // Premium touch: brief animation on the badge
+        badge.style.transform = "scale(1.5)";
+        setTimeout(() => {
+            badge.style.transform = "scale(1)";
+        }, 200);
+    }
+
+
+
+function resetEmail() {
+  const emailInput = document.getElementById('userEmail');
+  
+  // Logic to 'add' the email would go here (e.g., API call)
+  console.log("Email added: " + emailInput.value);
+
+  // This clears the field
+  emailInput.value = '';
+}
+</script>
+</body>
+</html>

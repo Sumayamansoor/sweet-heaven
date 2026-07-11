@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <title>Boutique Services | Sweet Heaven</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+
+
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+        :root {
+            --gold: #d4af37;
+            --dark-berry: #2d1a24;
+            --cream: #fffaf0;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cream);
+            margin: 0;
+            overflow-x: hidden;
+            color: var(--dark-berry);
+        }
+
+           /* --- 1. GLITTER CANVAS --- */
+        #glitterCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: radial-gradient(circle, #fffaf0 0%, #f7e9d7 100%);
+        }
+
+        /* --- 2. NAVBAR --- */
+        .navbar {
+            background: rgba(255, 255, 255, 0.85) !important;
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 15px 0;
+          
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .navbar-brand span { color: var(--gold); }
+
+        .nav-link {
+            font-weight: 600;
+            color: var(--dark-berry) !important;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover { color: var(--gold) !important; }
+        
+        
+/* 1. Define the Shaky Keyframes */
+@keyframes shakeMenu {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(2deg) translateX(1px); }
+    50% { transform: rotate(-2deg) translateX(-1px); }
+    75% { transform: rotate(1.5deg) translateX(1px); }
+    100% { transform: rotate(0deg); }
+}
+
+/* 2. Apply to your Navbar Items */
+.navbar-item, .nav-link { 
+    display: inline-block; /* Required for transform to work */
+    animation: shakeMenu 0.4s ease-in-out infinite; /* Constant shaking */
+    transform-origin: center;
+}
+
+/* 3. Optional: Staggered Shaking (Makes them dance at different times) */
+.navbar-item:nth-child(even) {
+    animation-duration: 0.5s; /* Slightly slower */
+    animation-delay: 0.1s;
+}
+
+.navbar-item:nth-child(odd) {
+    animation-duration: 0.3s; /* Slightly faster */
+    animation-direction: reverse;
+}
+
+/* 1. HEADER */
+.services-header {
+    padding: 120px 10% 60px;
+    text-align: center;
+     background: #fcf5e5; 
+
+}
+
+
+.pre-title {
+    letter-spacing: 5px;
+    font-size: 0.75rem;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 15px;
+}
+
+.services-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 400;
+}
+
+.accent-line {
+    width: 60px;
+    height: 1px;
+    background: var(--espresso);
+    margin: 30px auto;
+}
+
+/* 2. SERVICES GRID (Large Layout) */
+.services-grid {
+    padding: 0 10% 100px;
+}
+
+.service-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 80px; /* Large gap between services */
+    background: var(--white);
+    overflow: hidden;
+    min-height: 500px;
+}
+
+.service-card.reversed {
+    flex-direction: row-reverse;
+}
+
+.card-image {
+    flex: 1;
+    height: 500px;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.service-card:hover .card-image img {
+    transform: scale(1.05); /* Subtle zoom on hover */
+}
+
+.card-content {
+    flex: 1;
+    padding: 80px;
+}
+
+.card-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+}
+
+.card-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 35px;
+}
+
+/* 3. PREMIUM LINK */
+.service-link {
+    text-decoration: none;
+    color: var(--espresso);
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 5px;
+    transition: 0.3s;
+}
+
+.service-link:hover {
+    color: var(--gold);
+}
+
+
+        .footer-premium {
+    background: #0f0f0f; /* Deep charcoal/black */
+    color: #ffffff;
+    padding: 100px 0 40px;
+    margin-top: 80px;
+}
+
+.text-gold { color: #d4af37; }
+
+.footer-text {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: #999;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: #999;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #d4af37;
+    padding-left: 10px;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-right: 20px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #d4af37;
+}
+        
+/* Mobile styles go here first */
+
+/* Tablet and up (768px+) */
+@media (min-width: 768px) {
+  .container { display: flex; }
+}
+
+/* Desktop and up (1024px+) */
+@media (min-width: 1024px) {
+  .sidebar { display: block; }
+}
+.parent-container {
+  container-type: inline-size;
+}
+
+@container (min-width: 400px) {
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Switch to side-by-side layout */
+  }
+}
+
+        </style>
+</head>
+<body>
+      <canvas id="glitterCanvas"></canvas>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">SWEET <span>HEAVEN</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           
+            <div class="premium-search-container">
+    <i class="bi bi-search search-glass-icon"></i>
+    <input type="text" class="premium-search-input" placeholder="Search Sweet Heaven...">
+</div>
+           
+            <div class="collapse navbar-collapse" id="mainNav">
+               <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gifthamper.html">Gift Hampers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            <div class="premium-cart-wrapper">
+    <i class="bi bi-bag-heart premium-cart-icon"></i>
+    <span class="cart-count-badge" id="cartBadge">0</span>
+</div>
+            </div>
+        </div>
+    </nav>
+    
+
+
+    <header class="services-header">
+        <span class="pre-title">OUR OFFERINGS</span>
+        <h1>Bespoke Sweet <em>Services</em></h1>
+        <div class="accent-line"></div>
+    </header>
+
+    <section class="services-grid">
+        
+        <div class="service-card">
+            <div class="card-image">
+                <img src="./images.png/services2.png" alt="Custom Cakes">
+            </div>
+            <div class="card-content">
+                <h2>Custom Creations</h2>
+                <p>From architectural multi-tier cakes to delicate rose-beige macarons, we bring your vision to life with artisan precision.</p>
+                <a href="contact.html" class="service-link">Inquire Now</a>
+            </div>
+        </div>
+
+        <div class="service-card reversed">
+            <div class="card-image">
+                <img src="./images.png/gift hamper 2.png" alt="Luxury Hampers">
+            </div>
+            <div class="card-content">
+                <h2>Luxury Gifting</h2>
+                <p>Signature Espresso-toned hampers curated with our finest Gulab Jamun, Kunafa, and handcrafted chocolates for the ultimate impression.</p>
+                <a href="products.html" class="service-link">View Collection</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="card-image">
+                <img src="./images.png/services1.png" alt="Event Catering">
+            </div>
+            <div class="card-content">
+                <h2>Couture Catering</h2>
+                <p>Elevate your events with a live dessert station featuring molten lava cakes and a curated selection of gourmet beverages.</p>
+                <a href="contact.html" class="service-link">Book Event</a>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+    <footer class="footer-premium">
+    <div class="container">
+        <div class="row gy-5">
+            <div class="col-lg-4 col-md-6">
+                <h3 class="font-playfair text-gold mb-4">Sweet Heaven</h3>
+                <p class="footer-text">Crafting moments of pure indulgence since 2024. Our artisanal hampers are designed for those who appreciate the finer things in life.</p>
+                <div class="social-links mt-4">
+                 <a href="https://www.instagram.com/?hl=en"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.pinterest.com/"><i class="bi bi-pinterest"></i></a>
+                    <a href="https://www.whatsapp.com/"><i class="bi bi-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6">
+                <h6 class="text-uppercase tracking-widest mb-4">Collections</h6>
+                <ul class="footer-links">
+                    <li><a href="#hampers">Royal Heritage</a></li>
+                    <li><a href="#hampers">Velvet Nights</a></li>
+                    <li><a href="#hampers">Gold Edition</a></li>
+                    <li><a href="#">Limited Release</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-md-6">
+                <h6 class="text-uppercase tracking-widest mb-4">Concierge</h6>
+                <ul class="footer-links">
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Return Suite</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <h6 class="text-uppercase tracking-widest mb-4">The Inner Circle</h6>
+                <p class="small text-muted mb-4">Join our mailing list for exclusive previews of new collections.</p>
+                <div class="newsletter-form">
+                              <form id="emailForm">
+  <input type="email" id="userEmail" placeholder="Enter your email" required>
+  <button type="button" onclick="resetEmail()">Join</button>
+</form>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom mt-5 pt-4 border-top border-secondary">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <p class="small mb-0">&copy; 2026 Sweet Heaven Boutique. All Rights Reserved.</p>
+                <p class="small mb-0 text-uppercase tracking-widest">Designed for Excellence</p>
+            </div>
+        </div>
+    </div>
+</footer>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const canvas = document.getElementById('glitterCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+         
+
+    ///add to cart
+    let currentCartCount = 0;
+
+    function addToCart() {
+        // Increase the count
+        currentCartCount++;
+        
+        // Update the badge in the header
+        const badge = document.getElementById('cartBadge');
+        badge.innerText = currentCartCount;
+        
+        // Premium touch: brief animation on the badge
+        badge.style.transform = "scale(1.5)";
+        setTimeout(() => {
+            badge.style.transform = "scale(1)";
+        }, 200);
+    }
+
+
+    function resetEmail() {
+  const emailInput = document.getElementById('userEmail');
+  
+  // Logic to 'add' the email would go here (e.g., API call)
+  console.log("Email added: " + emailInput.value);
+
+  // This clears the field
+  emailInput.value = '';
+}
+
+
+</script>
+</body>
+</html>
